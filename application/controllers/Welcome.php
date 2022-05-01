@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model('menu_model');
         $this->load->model('services_model');
+		$this->load->model('news_model');
     }
 
 	public function index()
@@ -15,6 +16,7 @@ class Welcome extends CI_Controller {
 		$data['oversea_jobs'] = $this->services_model->get_all_oversea_jobs();
 		$data['country_lists'] = $this->menu_model->get_country();
 		$data['activities'] = $this->menu_model->getAll();
+		$data['news'] = $this->news_model->getAllNews();
 		$this->load->view('welcome_message', $data);
 	}
 }

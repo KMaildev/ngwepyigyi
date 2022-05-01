@@ -104,6 +104,18 @@ $lang_session = $this->session->userdata('lang');
 						</li>
 
 						<li>
+							<a href="<?php echo site_url('news'); ?>">
+								<?php
+								if ($lang_session == 'jp') {
+									echo "ニュース";
+								} else {
+									echo "News";
+								}
+								?>
+							</a>
+						</li>
+
+						<li>
 							<a href="<?php echo site_url('contact'); ?>">
 								<?php
 								if ($lang_session == 'jp') {
